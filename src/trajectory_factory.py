@@ -1,5 +1,5 @@
-from spiral_trajectory import SpiralTrajectory
-from zigzag_trajectory import ZigZagTrajectory
+from src.spiral_trajectory import SpiralTrajectory
+from src.zigzag_trajectory import ZigZagTrajectory
 
 
 class TrajectoryFactory:

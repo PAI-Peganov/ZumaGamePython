@@ -1,8 +1,8 @@
 import random
 import pygame
-from ball import Ball
-from game_path import GamePath
-from settings import COINS_PER_BALL
+from src.ball import Ball
+from src.game_path import GamePath
+from src.settings import COINS_PER_BALL
 
 
 class BallChain:

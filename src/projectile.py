@@ -1,5 +1,5 @@
 import pygame
-from utils import safe_normalize
+from src.utils import safe_normalize
 
 
 class Projectile:

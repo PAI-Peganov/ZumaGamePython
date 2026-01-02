@@ -1,5 +1,5 @@
-from settings import LEVEL_CONFIGS
-from level import Level
+from src.settings import LEVEL_CONFIGS
+from src.level import Level
 
 
 class LevelManager:

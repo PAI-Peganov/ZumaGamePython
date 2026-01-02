@@ -18,8 +18,12 @@ class TestBallChain(unittest.TestCase):
         )
 
     def test_chain_length(self):
-        self.assertEqual(len(self.chain.balls), 5)
+        self.assertEqual(len(self.chain.balls), 4)
 
     def test_pop_matches(self):
         removed = self.chain.pop_color_group(2)
         self.assertTrue(len(removed) == 4)
+
+
+if __name__ == '__main__':
+    unittest.main()

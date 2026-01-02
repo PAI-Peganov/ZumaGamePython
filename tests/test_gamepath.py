@@ -21,3 +21,7 @@ class TestGamePath(unittest.TestCase):
     def test_pos_middle(self):
         p = self.path.pos_at(50)
         self.assertEqual(p, pygame.Vector2(50, 0))
+
+
+if __name__ == '__main__':
+    unittest.main()

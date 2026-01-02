@@ -17,3 +17,7 @@ class TestProjectile(unittest.TestCase):
     def test_move(self):
         self.p.update(1.0, pygame.Rect(0, 0, 500, 500))
         self.assertEqual(self.p.pos.x, 100)
+
+
+if __name__ == '__main__':
+    unittest.main()

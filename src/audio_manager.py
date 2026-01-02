@@ -1,6 +1,6 @@
 import os
 import pygame
-from settings import ASSETS_DIR, AMBIENT_MUSIC_FILE, SFX
+from src.settings import ASSETS_DIR, AMBIENT_MUSIC_FILE, SFX
 
 
 class AudioManager:

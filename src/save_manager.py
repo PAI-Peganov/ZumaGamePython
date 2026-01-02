@@ -1,6 +1,6 @@
 import json
 import pygame
-from settings import COLORS
+from src.settings import COLORS
 
 
 class SaveManager:

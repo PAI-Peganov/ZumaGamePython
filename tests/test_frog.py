@@ -12,3 +12,7 @@ class TestFrog(unittest.TestCase):
         d = pygame.Vector2(1, 0)
         p = self.frog.mouth_pos(d)
         self.assertTrue(p.x > 100)
+
+
+if __name__ == '__main__':
+    unittest.main()

@@ -1,5 +1,5 @@
-from active_effect import ActiveEffect
-from settings import EFFECT_DURATIONS, SHOT_SLOW_MULT, SHOT_FAST_MULT
+from src.active_effect import ActiveEffect
+from src.settings import EFFECT_DURATIONS, SHOT_SLOW_MULT, SHOT_FAST_MULT
 
 
 class PowerUpManager:

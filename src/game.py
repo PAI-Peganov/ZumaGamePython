@@ -7,20 +7,20 @@ from settings import (
     COLORS, POWERUP_DROP_CHANCE, BOMB_REMOVE_RADIUS,
     START_LIVES, LIFE_COST_COINS, COINS_PER_BALL, LEVEL_CONFIGS
 )
-from utils import safe_normalize
-from game_path import GamePath
-from trajectory_factory import TrajectoryFactory
-from level_manager import LevelManager
-from chain import BallChain
-from projectile import Projectile
-from frog import Frog
-from skull import Skull
-from pop_effect import PopEffect
-from powerup_pickup import PowerUpPickup
-from powerup_manager import PowerUpManager
-from audio_manager import AudioManager
-from save_manager import SaveManager
-from cheat_manager import CheatManager
+from src.utils import safe_normalize
+from src.game_path import GamePath
+from src.trajectory_factory import TrajectoryFactory
+from src.level_manager import LevelManager
+from src.chain import BallChain
+from src.projectile import Projectile
+from src.frog import Frog
+from src.skull import Skull
+from src.pop_effect import PopEffect
+from src.powerup_pickup import PowerUpPickup
+from src.powerup_manager import PowerUpManager
+from src.audio_manager import AudioManager
+from src.save_manager import SaveManager
+from src.cheat_manager import CheatManager
 
 
 class Game:

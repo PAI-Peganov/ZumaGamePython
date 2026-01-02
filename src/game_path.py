@@ -1,5 +1,5 @@
 import pygame
-from utils import clamp
+from src.utils import clamp
 
 
 class GamePath:

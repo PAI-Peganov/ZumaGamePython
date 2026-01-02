@@ -13,3 +13,7 @@ class TestBall(unittest.TestCase):
     def test_update_pos(self):
         self.ball.update_pos(self.path.pos_at(50))
         self.assertEqual(self.ball.pos, pygame.Vector2(50, 0))
+
+
+if __name__ == '__main__':
+    unittest.main()
