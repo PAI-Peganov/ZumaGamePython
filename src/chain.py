@@ -29,7 +29,7 @@ class BallChain:
     def _recalc_positions(self) -> None:
         for i, b in enumerate(self.balls):
             s = self.head_s - i * self.spacing
-            b.pos = self.path.pos_at(s, extrapolate=True)
+            b.update_pos(self.path.pos_at(s, extrapolate=True))
 
     def update(self, dt: float, speed_mult: float, direction: int) -> None:
         if not self.balls:
