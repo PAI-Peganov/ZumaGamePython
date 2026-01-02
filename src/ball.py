@@ -1,5 +1,5 @@
-from __future__ import annotations
 import pygame
+
 
 class Ball:
     def __init__(self, color: tuple[int, int, int], radius: int):

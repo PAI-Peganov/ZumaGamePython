@@ -1,7 +1,7 @@
-from __future__ import annotations
 import json
 import pygame
 from settings import COLORS
+
 
 class SaveManager:
     def __init__(self, filename: str = "save.json"):

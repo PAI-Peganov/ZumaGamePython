@@ -1,7 +1,7 @@
-from __future__ import annotations
 import os
 import pygame
-from settings import ASSETS_DIR, MUSIC_FILE, SFX
+from settings import ASSETS_DIR, AMBIENT_MUSIC_FILE, SFX
+
 
 class AudioManager:
     def __init__(self):
@@ -11,6 +11,7 @@ class AudioManager:
             pygame.mixer.init()
             self.ok = True
         except Exception:
+            print("Audio not managed")
             self.ok = False
         self.sounds: dict[str, pygame.mixer.Sound] = {}
         self._load()
@@ -26,10 +27,10 @@ class AudioManager:
                 except Exception:
                     pass
 
-    def play_music(self) -> None:
+    def play_ambient_music(self) -> None:
         if not self.ok or not self.enabled:
             return
-        path = os.path.join(ASSETS_DIR, MUSIC_FILE)
+        path = os.path.join(ASSETS_DIR, AMBIENT_MUSIC_FILE)
         if os.path.exists(path):
             try:
                 pygame.mixer.music.load(path)
@@ -37,24 +38,24 @@ class AudioManager:
             except Exception:
                 pass
 
-    def toggle_music(self) -> None:
+    def toggle_ambient_music(self) -> None:
         self.enabled = not self.enabled
         if not self.ok:
             return
         try:
             if self.enabled:
-                self.play_music()
+                self.play_ambient_music()
             else:
                 pygame.mixer.music.stop()
         except Exception:
             pass
 
-    def sfx(self, name: str) -> None:
+    def sfx(self, clip_name: str) -> None:
         if not self.ok or not self.enabled:
             return
-        snd = self.sounds.get(name)
-        if snd:
+        sound_clip = self.sounds.get(clip_name)
+        if sound_clip:
             try:
-                snd.play()
+                sound_clip.play()
             except Exception:
                 pass

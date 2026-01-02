@@ -1,8 +1,11 @@
-from __future__ import annotations
 import pygame
 
+
 class PopEffect:
-    def __init__(self, pos: pygame.Vector2, color: tuple[int, int, int], radius: int, duration: float = 0.35):
+    def __init__(
+            self, pos: pygame.Vector2, color: tuple[int, int, int],
+            radius: int, duration: float = 0.35
+    ):
         self.pos = pos.copy()
         self.color = color
         self.radius = radius

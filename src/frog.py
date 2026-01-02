@@ -1,6 +1,6 @@
-from __future__ import annotations
 import math
 import pygame
+
 
 class Frog:
     def __init__(self, pos: tuple[int, int]):
@@ -16,22 +16,25 @@ class Frog:
 
         pygame.draw.circle(s, body, (45, 45), 34)
         pygame.draw.circle(s, outline, (45, 45), 34, 3)
-        pygame.draw.circle(s, body, (28, 24), 13)
-        pygame.draw.circle(s, body, (62, 24), 13)
-        pygame.draw.circle(s, outline, (28, 24), 13, 2)
-        pygame.draw.circle(s, outline, (62, 24), 13, 2)
-        pygame.draw.circle(s, eye, (28, 24), 7)
-        pygame.draw.circle(s, pupil, (30, 26), 3)
-        pygame.draw.circle(s, eye, (62, 24), 7)
-        pygame.draw.circle(s, pupil, (64, 26), 3)
+        pygame.draw.circle(s, body, (28, 40), 13)
+        pygame.draw.circle(s, body, (62, 40), 13)
+        pygame.draw.circle(s, outline, (28, 40), 13, 2)
+        pygame.draw.circle(s, outline, (62, 40), 13, 2)
+        pygame.draw.circle(s, eye, (28, 36), 7)
+        pygame.draw.circle(s, pupil, (28, 32), 3)
+        pygame.draw.circle(s, eye, (62, 36), 7)
+        pygame.draw.circle(s, pupil, (62, 32), 3)
 
-        pygame.draw.arc(s, outline, pygame.Rect(28, 42, 34, 24), math.radians(15), math.radians(165), 3)
+        pygame.draw.arc(
+            s, (140, 90, 55), pygame.Rect(28, 10, 34, 18),
+            math.radians(15), math.radians(165), 3
+        )
         return s
 
     def angle_from_dir(self, d: pygame.Vector2) -> float:
         if d.length_squared() < 1e-9:
             return 0.0
-        return -math.degrees(math.atan2(d.y, d.x))
+        return -math.degrees(math.atan2(d.y, d.x)) - 90
 
     def mouth_pos(self, d: pygame.Vector2) -> pygame.Vector2:
         if d.length_squared() < 1e-9:

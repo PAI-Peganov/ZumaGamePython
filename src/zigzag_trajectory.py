@@ -1,12 +1,9 @@
-from __future__ import annotations
-
 class ZigZagTrajectory:
     def __init__(self, width: int, height: int):
         self.width = width
         self.height = height
 
     def build_points(self) -> list[tuple[float, float]]:
-        # простая змейка от левого края к центру
         w, h = self.width, self.height
         return [
             (-120, 120),

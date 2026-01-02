@@ -1,6 +1,6 @@
-from __future__ import annotations
 from active_effect import ActiveEffect
-from settings import EFFECT_DURATIONS, SLOW_MULT, SHOT_FAST_MULT
+from settings import EFFECT_DURATIONS, SHOT_SLOW_MULT, SHOT_FAST_MULT
+
 
 class PowerUpManager:
     def __init__(self):
@@ -27,7 +27,7 @@ class PowerUpManager:
         return kind in self.effects
 
     def chain_speed_mult(self) -> float:
-        return SLOW_MULT if self.has("SLOW") else 1.0
+        return SHOT_SLOW_MULT if self.has("SLOW") else 1.0
 
     def chain_dir(self) -> int:
         return -1 if self.has("REVERSE") else 1

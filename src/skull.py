@@ -1,9 +1,9 @@
-from __future__ import annotations
 import pygame
 
+
 class Skull:
-    def __init__(self, pos: tuple[int, int], radius: int = 34):
-        self.pos = pygame.Vector2(pos)
+    def __init__(self, pos: pygame.Vector2, radius: int = 34):
+        self.pos = pos.copy()
         self.radius = radius
 
     def draw(self, screen: pygame.Surface) -> None:
@@ -11,9 +11,19 @@ class Skull:
         base = (210, 210, 220)
         dark = (70, 70, 85)
 
-        pygame.draw.circle(screen, base, (x, y), self.radius)
-        pygame.draw.circle(screen, dark, (x, y), self.radius, 3)
+        pygame.draw.circle(screen, base, self.pos, self.radius)
+        pygame.draw.circle(screen, dark, self.pos, self.radius, 3)
 
-        pygame.draw.circle(screen, dark, (x - 12, y - 6), 8)
-        pygame.draw.circle(screen, dark, (x + 12, y - 6), 8)
-        pygame.draw.rect(screen, dark, pygame.Rect(x - 10, y + 10, 20, 10), border_radius=3)
+        pygame.draw.circle(
+            screen, dark, (x - self.radius // 3, y - self.radius // 6),
+            self.radius // 4
+        )
+        pygame.draw.circle(
+            screen, dark, (x + self.radius // 3, y - self.radius // 6),
+            self.radius // 4)
+        pygame.draw.rect(
+            screen, dark, pygame.Rect(
+                x - self.radius // 3, y + self.radius // 3,
+                self.radius // 3 * 2, self.radius // 3
+            ), border_radius=3
+        )

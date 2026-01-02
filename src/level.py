@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 class Level:
     def __init__(self, index: int, cfg: dict):
         self.index = index

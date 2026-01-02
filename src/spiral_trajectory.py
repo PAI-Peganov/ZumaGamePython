@@ -1,8 +1,11 @@
-from __future__ import annotations
 import math
 
+
 class SpiralTrajectory:
-    def __init__(self, width: int, height: int, turns: float, r_start: float, r_end: float):
+    def __init__(
+            self, width: int, height: int, turns: float, r_start: float,
+            r_end: float
+    ):
         self.width = width
         self.height = height
         self.turns = turns

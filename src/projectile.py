@@ -1,5 +1,6 @@
-from __future__ import annotations
 import pygame
+from utils import safe_normalize
+
 
 class Projectile:
     def __init__(
@@ -9,10 +10,10 @@ class Projectile:
         speed: float,
         color: tuple[int, int, int],
         radius: int,
-        kind: str = "NORMAL",  # NORMAL | BOMB
+        kind: str = "NORMAL",
     ):
         self.pos = pos.copy()
-        self.vel = direction * speed
+        self.vel = safe_normalize(direction) * speed
         self.color = color
         self.radius = radius
         self.kind = kind
